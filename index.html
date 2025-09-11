@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Place Keeper</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body class="main-layout" onload="onInit()">
+        <header > 
+            <h1>Place Keeper</h1> 
+            <div class="flex" >
+                <p> find your way back to your best places</p>
+                <nav>
+                    <ul class="flex clean-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="places.html">Places</a></li>
+                        <li><a href="setting.html">Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="map-info">
+            
+            <section>
+                <div class="map">
+                    map
+                </div>
+            </section>
+            
+            <aside class="aside">
+                <h1>Places</h1>
+                <ul class="places-list clean-list">
+    
+                </ul>
+            </aside>
+        </section>
+
+        <footer>
+            <p>© 2025 Place Keeper</p>
+        </footer>
+
+		<script src="js/main.js"></script>
+
+		<script src="js/placekeeper.control.js"></script>
+		<script src="js/placekeeper.service.js"></script>
+
+        <!-- Google Maps - Minimal Script -->
+		<script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async"></script>
+
+        <!-- Google Maps - More Options -->
+		<!-- <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&libraries=marker&callback=mapReady"></script> -->
+
+	</body>
+</html>

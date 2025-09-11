@@ -1,0 +1,12 @@
+header {
+    background: var(--clr-primary-1);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 5px;
+
+    div{
+        justify-content: space-between;
+    }
+
+}
