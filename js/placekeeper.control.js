@@ -17,13 +17,30 @@ function renderPlaces() {
     document.querySelector('.places-list').innerHTML = strHTMLs.join('')
 }
 
+function renderMarkers() {
+    const places = getPlaces()
+    // remove previous markers
+    gMarkers.forEach(marker => marker.setMap(null))
+    // every place is creating a marker
+    gMarkers = places.map(place => {
+        return new google.maps.Marker({
+            position: place,
+            map: gMap,
+            title: place.name
+        })
+    })
+    console.log('Markers:', gMarkers)
+}
+
 function onRemovePlace(placeId){
    removePlace(placeId)
    renderPlaces()
+   renderMarkers()
 }
 
 function onAddPlace(name, lat, lng, zoom){
     addPlace(name, lat, lng, zoom)
+    renderMarkers()
 }
 
 function onGoPlace(placeId){
@@ -46,7 +63,7 @@ function onGoToMyLocation() {
 
             gMap.setCenter(myLatLng)
             gMap.setZoom(15)
-            
+
             if (gMyMarker) {
                 gMyMarker.setPosition(myLatLng)
             } else {

@@ -6,6 +6,8 @@
 var gPlaces = []
 let gMap
 let gMyMarker
+let gMarkers = []
+
 
 const MAP_KEY = 'AIzaSyClnx_S-0AQ2TYgfx3B7z2z2LKD9NSJm18'
 const STORAGE_KEY = 'places'
@@ -19,6 +21,7 @@ function removePlace(placeId){
     const idx = gPlaces.findIndex(place => place.id === placeId)
     if (idx === -1) return
     gPlaces.splice(idx, 1)
+    _savePlacesToStorage()
 }
 
 function addPlace(name, lat, lng, zoom){

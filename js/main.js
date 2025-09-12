@@ -20,4 +20,6 @@ function initMap() {
         onAddPlace(name, lat, lng, gMap.getZoom())
         renderPlaces()
     })
+    renderMarkers()
 }
+
