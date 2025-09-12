@@ -4,8 +4,9 @@
 
 
 var gPlaces = []
+let gMap
 
-const MAP_KEY = 'AIzaSyD-9tSrke72PouQFqI3Kf0H1sV2kXg9nU8'
+const MAP_KEY = 'AIzaSyClnx_S-0AQ2TYgfx3B7z2z2LKD9NSJm18'
 const STORAGE_KEY = 'places'
 _createPlaces()
 
@@ -46,7 +47,7 @@ function _createPlaces() {
     if (!gPlaces || !gPlaces.length) {
         gPlaces = [
             _createPlace('Pukis house', 32.1416, 34.831213, 15),
-            _createPlace('lolo house', 32.1416, 34.831213, 15),
+            _createPlace('lolo house', 32.353985, 35.118877, 15),
         ]
         _savePlacesToStorage()
     }

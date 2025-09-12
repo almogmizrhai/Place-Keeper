@@ -4,6 +4,5 @@
 
 
 function onInit(){
-    console.log('onInit')
     renderPlaces()
 }

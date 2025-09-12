@@ -9,4 +9,8 @@ header {
         justify-content: space-between;
     }
 
+    a:hover{
+        color: var(--clr-primary-2);
+    }
+
 }
