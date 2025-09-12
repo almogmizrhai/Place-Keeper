@@ -5,6 +5,7 @@
 
 var gPlaces = []
 let gMap
+let gMyMarker
 
 const MAP_KEY = 'AIzaSyClnx_S-0AQ2TYgfx3B7z2z2LKD9NSJm18'
 const STORAGE_KEY = 'places'

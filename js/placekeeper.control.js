@@ -17,33 +17,49 @@ function renderPlaces() {
     document.querySelector('.places-list').innerHTML = strHTMLs.join('')
 }
 
-function initMap() {
-    gMap = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 29.5577, lng: 34.9519 },
-        zoom: 15,
-    })
-    
-    gMap.addListener('click', ev => { 
-        const name = prompt('Place name?', 'Place 1')
-        const lat = ev.latLng.lat()
-        const lng = ev.latLng.lng()
-        addPlace(name, lat, lng, gMap.getZoom())
-        renderPlaces()
-    })
-}
-
-
 function onRemovePlace(placeId){
    removePlace(placeId)
    renderPlaces()
 }
 
-function onAddPlace(){
-    addPlace()
+function onAddPlace(name, lat, lng, zoom){
+    addPlace(name, lat, lng, zoom)
 }
 
 function onGoPlace(placeId){
     const place = getPlaceById(placeId)
     gMap.setCenter({ lat: place.lat, lng: place.lng })
     gMap.setZoom(place.zoom)
+}
+
+function onGoToMyLocation() {
+    if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser")
+        return
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        pos => {
+            const lat = pos.coords.latitude
+            const lng = pos.coords.longitude
+            const myLatLng = { lat, lng }
+
+            gMap.setCenter(myLatLng)
+            gMap.setZoom(15)
+            
+            if (gMyMarker) {
+                gMyMarker.setPosition(myLatLng)
+            } else {
+                gMyMarker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: gMap,
+                    title: "You are here!",
+                })
+            }
+        },
+        err => {
+            console.error("Error:", err)
+            alert("Couldn't fetch your location")
+        }
+    )
 }
