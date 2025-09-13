@@ -36,17 +36,20 @@ function onRemovePlace(placeId){
    removePlace(placeId)
    renderPlaces()
    renderMarkers()
+   flashMsg('Place removed!')
 }
 
 function onAddPlace(name, lat, lng, zoom){
     addPlace(name, lat, lng, zoom)
     renderMarkers()
+    flashMsg('Place added!')
 }
 
 function onGoPlace(placeId){
     const place = getPlaceById(placeId)
     gMap.setCenter({ lat: place.lat, lng: place.lng })
     gMap.setZoom(place.zoom)
+    flashMsg('You are here!')
 }
 
 function onGoToMyLocation() {
@@ -79,4 +82,5 @@ function onGoToMyLocation() {
             alert("Couldn't fetch your location")
         }
     )
+    flashMsg('My location!')
 }

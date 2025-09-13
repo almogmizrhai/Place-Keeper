@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Place Keeper</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body class="main-layout" onload="onInit()">
+        <header > 
+            <h1>Place Keeper</h1> 
+            <div class="flex" >
+                <p> find your way back to your best places</p>
+                <nav>
+                    <ul class="flex clean-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a class="in-page" href="places.html">Places</a></li>
+                        <li><a href="setting.html">Settings</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        
+        <h1>My Places</h1>
+
+        <section class="map-info">
+            <div class="user-msg hide"></div>
+            
+            <section>
+                <div id="map" class="map-section"></div>
+            </section>
+            
+            <aside class="aside">
+                <h1>Places</h1>
+                <ul class="places-list clean-list">
+    
+                </ul>
+                <button class="btn" onclick="onAddPlace()">+ Add Place</button>
+                <button class="btn" onclick="onGoToMyLocation()">⌖ My Location</button>
+            </aside>
+        </section>
+
+        <footer>
+            <p>© 2025 Place Keeper</p>
+        </footer>
+
+		<script src="js/main.js"></script>
+		<script src="js/placekeeper.utils.js"></script>
+
+        
+		<script src="js\services\map.storage.service.js"></script>
+		<script src="js\services\map.service.js"></script>
+		<script src="js\services\pref.service.js"></script>
+        
+		<script src="js\home.controller.js"></script>
+		<script src="js\map.control.js"></script>
+		<script src="js\pref.controller.js"></script>
+
+
+        <!-- Google Maps - Minimal Script -->
+        <!-- <script async 
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClnx_S-0AQ2TYgfx3B7z2z2LKD9NSJm18&callback=initMap">
+        </script> -->
+
+
+        <!-- Google Maps - More Options -->
+		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClnx_S-0AQ2TYgfx3B7z2z2LKD9NSJm18&loading=async&libraries=marker&callback=initMap"></script>
+
+	</body>
+</html>

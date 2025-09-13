@@ -12,13 +12,12 @@ function makeId(length = 4) {
     return id
 }
 
-function showMsg(txt) {
-    var elMsg = document.querySelector('.user-msg')
-    elMsg.innerHTML = txt
-
-    elMsg.classList.add('show')
-
-    setTimeout(() => {
-        elMsg.classList.remove('show')
-    }, 2000)
+function flashMsg(msg){
+    const elUserMsg = document.querySelector('.user-msg')
+    elUserMsg.innerText = msg
+    elUserMsg.classList.add('open')
+    
+    setTimeout(()=>{
+        elUserMsg.classList.remove('open')
+    }, 3000)
 }

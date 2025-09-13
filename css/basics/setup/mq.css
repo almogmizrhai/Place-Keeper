@@ -1,27 +1,26 @@
 /* mobile only */
 @media (max-width: 640px) {
     .main-layout {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
-
+    
     .map-info {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-auto-rows: auto;
-        gap: 1rem; 
+        display: flex;
+        flex-direction: column;
     }
 }
 
 /* small 640px */
 @media (min-width: 640px) {
     .main-layout {
-        grid-template-columns: minmax(16px, 1fr) minmax(auto, var(--s)) minmax(16px, 1fr);
+        display: flex;
+        flex-direction: column;
     }
 
     .map-info {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 1rem;
+        display: flex;
+        flex-direction: column;
     }
 }
 

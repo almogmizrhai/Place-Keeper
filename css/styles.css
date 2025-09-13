@@ -10,12 +10,14 @@
 @import url('basics/layout.css');
 
 /* COMPONENTS */
-@import url('basics/components/footer.css');
-@import url('basics/components/aside.css');
 @import url('basics/components/header.css');
+@import url('basics/components/main-nav.css');
+@import url('basics/components/welcome-section.css');
+@import url('basics/components/form.css');
+@import url('basics/components/aside.css');
 @import url('basics/components/map-info.css');
 @import url('basics/components/map.css');
-@import url('basics/components/main-nav.css');
+@import url('basics/components/footer.css');
 
 /* MG */
 @import url('basics/setup/mq.css');

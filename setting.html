@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body onload="onInitSettings()">
+    <header> 
+        <h1>Place Keeper</h1> 
+        <div class="flex" >
+            <p> find your way back to your best places</p>
+            <nav>
+                <ul class="flex clean-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="places.html">Places</a></li>
+                    <li><a class="in-page" href="setting.html">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h2>User Preferences Form</h2>
+    <fieldset>
+        <legend>Preferences</legend>
+        <form id="frmRegister" onsubmit="onSubmit(this, event)">
+            <label for="name">Name:</label>
+            <input type="text" id="fullName" required name="fullName" placeholder="First and last name" />
+            
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" />
+
+            <label for="age">Age: <span id="sAge">18</span></label>
+            <input type="range" id="age" name="age" step="1" min="18" max="120" value="18"
+            onchange="showAge(this.value)" />
+            
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" onchange="onCheckAge(this.value)" />
+
+            <label for="birthTime">Birth Time:</label>
+            <input type="time" id="birthTime" name="birthTime" />
+
+            <h3>Colors</h3>
+            
+            <label for="color">Background Color: </label>
+            <input type="color" id="bgColor" name="bgColor" form="frmRegister" value="#ff0000" id="color"/>
+            
+            <label for="color">Text Color: </label>
+            <input type="color" id="txtColor" name="txtColor" form="frmRegister" value="#ff0000" id="color"/>
+
+            <button class="btn">Set Preferences</button>
+    </form>
+    
+</fieldset>
+
+    <datalist id="contactList">
+        <option value="puky@puk.com" label="Puki"></option>
+        <option value="support@example.com" label="Support"></option>
+        <option value="admin@example.com" label="Administrator"></option>
+    </datalist>
+
+    <div class="user-msg"></div>
+
+    <footer>
+        <p>© 2025 Place Keeper</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/placekeeper.utils.js"></script>
+
+    <script src="js\services\map.storage.service.js"></script>
+    <script src="js\services\map.service.js"></script>
+    <script src="js\services\pref.service.js"></script>
+    
+    <script src="js\home.controller.js"></script>
+    <script src="js\map.control.js"></script>
+    <script src="js\pref.controller.js"></script>
+</body>
+</html>

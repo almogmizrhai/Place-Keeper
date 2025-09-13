@@ -1,0 +1,24 @@
+#frmRegister, fieldset {
+    display: grid;
+    grid-template-columns: max-content max(1fr, 300px);
+    gap: 10px;
+
+    max-width: 400px;
+    padding: 1em;
+    margin: auto;
+}
+
+label {
+    font-size: .9em;
+    grid-column: 1;
+    align-self: center;
+}
+
+input {
+    grid-column: 2;
+}
+
+button {
+    grid-column: 2;
+    justify-self: end;
+}
